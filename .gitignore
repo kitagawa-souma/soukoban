@@ -1,0 +1,6 @@
+Soukoban/Log.txt
+*.filters
+*.user
+Soukoban/DxLib/
+Soukoban/Debug/
+Soukoban/.vs/
