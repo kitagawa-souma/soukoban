@@ -1,4 +1,4 @@
-#include "InGameScene.h"
+ï»¿#include "InGameScene.h"
 #include "DxLib.h"
 #include "../Manager/SceneManager.h"
 #include "../Manager/InputManager.h"
@@ -8,22 +8,22 @@ int InGameScene::Count = 0;
 
 enum
 {
-	STEP_START_JINGLE,//ŠJnƒWƒ“ƒOƒ‹‘Ò‚¿
-	STEP_INPUT,	 //“ü—Í‘Ò‚¿
-	STEP_CLEAR_JINGLE, //ƒNƒŠƒAƒWƒ“ƒOƒ‹‘Ò‚¿
-	STEP_END,	 //ƒV[ƒ“I—¹
+	STEP_START_JINGLE,//ï¿½Jï¿½nï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
+	STEP_INPUT,	 //ï¿½ï¿½ï¿½Í‘Ò‚ï¿½
+	STEP_CLEAR_JINGLE, //ï¿½Nï¿½ï¿½ï¿½Aï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
+	STEP_END,	 //ï¿½Vï¿½[ï¿½ï¿½ï¿½Iï¿½ï¿½
 };
 
 const int g_SampleStage[STAGE_HEIGHT][STAGE_WIDTH] =
 {
 	9, 9, 9, 1, 1, 1, 1, 1, 9, 9, 9,
 	9, 9, 9, 1, 3, 3, 3, 1, 9, 9, 9,
-	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//0 = °
-	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//1 = •Ç
-	1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1,				//2 = ƒvƒŒƒCƒ„[‰ŠúˆÊ’u
-	1, 0, 0, 4, 0, 0, 1, 0, 0, 0, 1,				//3 = –Ú•W’n“_
-	1, 0, 1, 0, 0, 4, 0, 4, 0, 0, 1,				//4 = –Ú•W•¨
-	1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,				//9 = ƒGƒŠƒAŠO
+	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//0 = ï¿½ï¿½
+	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//1 = ï¿½ï¿½
+	1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1,				//2 = ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
+	1, 0, 0, 4, 0, 0, 1, 0, 0, 0, 1,				//3 = ï¿½Ú•Wï¿½nï¿½_
+	1, 0, 1, 0, 0, 4, 0, 4, 0, 0, 1,				//4 = ï¿½Ú•Wï¿½ï¿½
+	1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,				//9 = ï¿½Gï¿½ï¿½ï¿½Aï¿½O
 	1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1,
 	9, 9, 1, 0, 1, 0, 1, 0, 1, 9, 9,
 	9, 9, 1, 0, 0, 0, 0, 0, 1, 9, 9,
@@ -36,12 +36,12 @@ const int g_DebugStage[STAGE_HEIGHT][STAGE_WIDTH] =
 {
 	9, 9, 9, 1, 1, 1, 1, 1, 9, 9, 9,
 	9, 9, 9, 1, 3, 3, 3, 1, 9, 9, 9,
-	9, 9, 9, 1, 4, 4, 4, 1, 9, 9, 9,				//0 = °
-	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//1 = •Ç
-	1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,				//2 = ƒvƒŒƒCƒ„[‰ŠúˆÊ’u
-	1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,				//3 = –Ú•W’n“_
-	1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,				//4 = –Ú•W•¨
-	1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,				//9 = ƒGƒŠƒAŠO
+	9, 9, 9, 1, 4, 4, 4, 1, 9, 9, 9,				//0 = ï¿½ï¿½
+	9, 9, 9, 1, 0, 0, 0, 1, 9, 9, 9,				//1 = ï¿½ï¿½
+	1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,				//2 = ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
+	1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,				//3 = ï¿½Ú•Wï¿½nï¿½_
+	1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,				//4 = ï¿½Ú•Wï¿½ï¿½
+	1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,				//9 = ï¿½Gï¿½ï¿½ï¿½Aï¿½O
 	1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1,
 	9, 9, 1, 0, 1, 0, 1, 0, 1, 9, 9,
 	9, 9, 1, 0, 0, 0, 0, 0, 1, 9, 9,
@@ -57,18 +57,18 @@ InGameScene::InGameScene() : m_PlayerX(0), m_PlayerY(0)
 	Tex3 = LoadGraph("block3.png");
 	Tex4 = LoadGraph("block4.png");
 	Tex5 = LoadGraph("block5.png");
-	Chara_up = LoadGraph("•àsƒhƒbƒgƒLƒƒƒ‰ 2.png");
-	Chara_down = LoadGraph("•àsƒhƒbƒgƒLƒƒƒ‰ 1.png");
-	Chara_left = LoadGraph("•àsƒhƒbƒgƒLƒƒƒ‰ 4.png");
-	Chara_right = LoadGraph("•àsƒhƒbƒgƒLƒƒƒ‰ 3.png");
+	Chara_up = LoadGraph("ï¿½ï¿½ï¿½sï¿½hï¿½bï¿½gï¿½Lï¿½ï¿½ï¿½ï¿½ 2.png");
+	Chara_down = LoadGraph("ï¿½ï¿½ï¿½sï¿½hï¿½bï¿½gï¿½Lï¿½ï¿½ï¿½ï¿½ 1.png");
+	Chara_left = LoadGraph("ï¿½ï¿½ï¿½sï¿½hï¿½bï¿½gï¿½Lï¿½ï¿½ï¿½ï¿½ 4.png");
+	Chara_right = LoadGraph("ï¿½ï¿½ï¿½sï¿½hï¿½bï¿½gï¿½Lï¿½ï¿½ï¿½ï¿½ 3.png");
 	Crear = LoadGraph("Clear.png");
 
-	//ƒXƒe[ƒWƒf[ƒ^‚ğ‰Šú‰»
+	//ï¿½Xï¿½eï¿½[ï¿½Wï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	/*
-		g_SampleStage‚Ì’†g‚ğ
-		m_StageData‚ÖƒRƒs[(“Ç‚İ‚İ)‚·‚é
-		‚±‚ÌA”z—ñ‚Ì’†g‚ª ObjectType_Player ‚¾‚Á‚½‚çA
-		‚»‚Ì‚Ìx, y‚ğm_PlayerX(Y)‚Ö‘ã“ü‚µAm_StageData‚Ö‚Í ObjectType_Ground ‚ğ‘ã“ü‚·‚é
+		g_SampleStageï¿½Ì’ï¿½ï¿½gï¿½ï¿½
+		m_StageDataï¿½ÖƒRï¿½sï¿½[(ï¿½Ç‚İï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½
+		ï¿½ï¿½ï¿½Ìï¿½ï¿½Aï¿½zï¿½ï¿½ï¿½Ì’ï¿½ï¿½gï¿½ï¿½ ObjectType_Player ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
+		ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½x, yï¿½ï¿½m_PlayerX(Y)ï¿½Ö‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Am_StageDataï¿½Ö‚ï¿½ ObjectType_Ground ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	*/
 	Reset();
 
@@ -184,34 +184,34 @@ void InGameScene::Draw()
 	{
 		for (int x = 0; x < STAGE_WIDTH; x++)
 		{
-			//•Ç•`‰æ
+			//ï¿½Ç•`ï¿½ï¿½
 			if (m_StageData[y][x] == 1)
 			{
 				DrawExtendGraph(x * CHIP_WIDTH, y * CHIP_HEIGHT, x * CHIP_WIDTH + CHIP_WIDTH, y * CHIP_HEIGHT + CHIP_HEIGHT, Tex1, false);
 			}
-			//ƒS[ƒ‹•`‰æ
+			//ï¿½Sï¿½[ï¿½ï¿½ï¿½`ï¿½ï¿½
 			if (m_StageData[y][x] == 3)
 			{
 				DrawExtendGraph(x * CHIP_WIDTH, y * CHIP_HEIGHT, x * CHIP_WIDTH + CHIP_WIDTH, y * CHIP_HEIGHT + CHIP_HEIGHT, Tex2, false);
 			}
-			//–¢”z’uƒNƒŒ[ƒg•`‰æ
+			//ï¿½ï¿½ï¿½zï¿½uï¿½Nï¿½ï¿½ï¿½[ï¿½gï¿½`ï¿½ï¿½
 			if (m_StageData[y][x] == 4)
 			{
 				DrawExtendGraph(x * CHIP_WIDTH, y * CHIP_HEIGHT, x * CHIP_WIDTH + CHIP_WIDTH, y * CHIP_HEIGHT + CHIP_HEIGHT, Tex4, false);
 			}
-			//”z’uƒNƒŒ[ƒg•`‰æ
+			//ï¿½zï¿½uï¿½Nï¿½ï¿½ï¿½[ï¿½gï¿½`ï¿½ï¿½
 			if (m_StageData[y][x] == 7)
 			{
 				DrawExtendGraph(x * CHIP_WIDTH, y * CHIP_HEIGHT, x * CHIP_WIDTH + CHIP_WIDTH, y * CHIP_HEIGHT + CHIP_HEIGHT, Tex3, false);
 			}
-			//°•`‰æ
+			//ï¿½ï¿½ï¿½`ï¿½ï¿½
 			if (m_StageData[y][x] == 0)
 			{
 				DrawExtendGraph(x * CHIP_WIDTH, y * CHIP_HEIGHT, x * CHIP_WIDTH + CHIP_WIDTH, y * CHIP_HEIGHT + CHIP_HEIGHT, Tex5, false);
 			}
 		}
 	}
-	//ƒvƒŒƒCƒ„[ˆÊ’u•`‰æ
+	//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ê’uï¿½`ï¿½ï¿½
 	InputManager* pInputMng = InputManager::GetInstance();
 	if (pInputMng->IsPush(KeyType_Up))
 	{
@@ -256,7 +256,7 @@ void InGameScene::Draw()
 		m_Step = STEP_CLEAR_JINGLE;
 	}
 
-	//‰æ–Ê¶ã‚ÉƒfƒoƒbƒO—p‚Ì•¶š‚ğ•‚Å•\¦‚·‚é
+	//ï¿½ï¿½ï¿½Êï¿½ï¿½ï¿½ï¿½Éƒfï¿½oï¿½bï¿½Oï¿½pï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	DrawString(20, 20, "InGameScene", GetColor(0, 0, 0));
 }
 
@@ -265,13 +265,13 @@ bool InGameScene::IsEnd() const
 	return (m_Step == STEP_END);
 }
 
-//ŠJnƒWƒ“ƒOƒ‹‘Ò‚¿
+//ï¿½Jï¿½nï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
 void InGameScene::step_Start_Jingle()
 {
 	m_Step = STEP_INPUT;
 }
 
-//“ü—Íó•t
+//ï¿½ï¿½ï¿½Íï¿½ï¿½t
 void InGameScene::step_Input()
 {
 	/*InputManager* pInputMng = InputManager::GetInstance();

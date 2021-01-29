@@ -1,4 +1,4 @@
-#ifndef INGAMESCENE_H
+ï»¿#ifndef INGAMESCENE_H
 #define INGAMESCENE_H
 
 #include"SceneBase.h"
@@ -6,12 +6,12 @@
 
 enum DirType
 {
-	DirType_Up,		//ã
-	DirType_Down,	//‰º
-	DirType_Left,	//¶
-	DirType_Right,	//‰E
+	DirType_Up,		//ï¿½ï¿½
+	DirType_Down,	//ï¿½ï¿½
+	DirType_Left,	//ï¿½ï¿½
+	DirType_Right,	//ï¿½E
 
-	DirType_Max,	//‰æ‘œ“Ç‚İ‚İ‚Åg—p‚·‚é
+	DirType_Max,	//ï¿½æ‘œï¿½Ç‚İï¿½ï¿½İ‚Ågï¿½pï¿½ï¿½ï¿½ï¿½
 };
 
 class InGameScene : public SceneBase
@@ -26,31 +26,31 @@ public:
 	void Exec();
 	void Draw();
 
-	virtual bool IsEnd() const; //ƒV[ƒ“‚ªI—¹‚µ‚½‚©‚Ç‚¤‚©‚ğ•Ô‚·
+	virtual bool IsEnd() const; //ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½
 
 private:
-	//ŠJnƒWƒ“ƒOƒ‹‘Ò‚¿
+	//ï¿½Jï¿½nï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
 	void step_Start_Jingle();
-	//“ü—Íó•t
+	//ï¿½ï¿½ï¿½Íï¿½ï¿½t
 	void step_Input();
-	//ƒNƒŠƒAƒWƒ“ƒOƒ‹‘Ò‚¿
+	//ï¿½Nï¿½ï¿½ï¿½Aï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
 	void step_Clear_Jingle();
 
-	//‘qŒÉ”Ô‚ÉŠÖŒW‚·‚éŠÖ”ŒQ
+	//ï¿½qï¿½É”Ô‚ÉŠÖŒWï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½ï¿½Q
 private:
-	//ƒNƒŠƒA”»’è
+	//ï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½
 	bool IsClear() const;
-	//ƒŠƒZƒbƒg
+	//ï¿½ï¿½ï¿½Zï¿½bï¿½g
 	void Reset();
-	//ƒfƒoƒbƒOƒŠƒZƒbƒg
+	//ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½Zï¿½bï¿½g
 	void Debug();
-	//ˆÚ“®ˆ—
+	//ï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½
 	void Move();
 
 private:
 	int m_StageData[STAGE_HEIGHT][STAGE_WIDTH];
-	int m_PlayerX;	//”z—ñã‚ÌX
-	int m_PlayerY;	//”z—ñã‚ÌY
+	int m_PlayerX;	//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½X
+	int m_PlayerY;	//ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y
 
 	int next_x;
 	int next_y;

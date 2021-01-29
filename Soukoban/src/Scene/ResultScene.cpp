@@ -1,4 +1,4 @@
-#include "ResultScene.h"
+ï»¿#include "ResultScene.h"
 #include "DxLib.h"
 #include "../Manager/SceneManager.h"
 #include "../Manager/InputManager.h"
@@ -6,10 +6,10 @@
 
 enum
 {
-	STEP_START_JINGLE,//ŠJnƒWƒ“ƒOƒ‹‘Ò‚¿
-	STEP_INPUT,	 //“ü—Í‘Ò‚¿
-	STEP_CLEAR_JINGLE, //ƒNƒŠƒAƒWƒ“ƒOƒ‹‘Ò‚¿
-	STEP_END,	 //ƒV[ƒ“I—¹
+	STEP_START_JINGLE,//ï¿½Jï¿½nï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
+	STEP_INPUT,	 //ï¿½ï¿½ï¿½Í‘Ò‚ï¿½
+	STEP_CLEAR_JINGLE, //ï¿½Nï¿½ï¿½ï¿½Aï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
+	STEP_END,	 //ï¿½Vï¿½[ï¿½ï¿½ï¿½Iï¿½ï¿½
 };
 
 ResultScene::ResultScene()
@@ -42,9 +42,9 @@ void ResultScene::Exec()
 
 void ResultScene::Draw()
 {
-	//‰æ–Ê¶ã‚ÉƒfƒoƒbƒO—p‚Ì•¶š‚ğ•‚Å•\¦‚·‚é
+	//ï¿½ï¿½ï¿½Êï¿½ï¿½ï¿½ï¿½Éƒfï¿½oï¿½bï¿½Oï¿½pï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//DrawString(20, 20, "ResultScene", GetColor(0, 0, 0));
-	printfDx("Š|‚©‚Á‚½è”F%dè", InGameScene::Count);
+	printfDx("ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è”ï¿½F%dï¿½ï¿½", InGameScene::Count);
 }
 
 bool ResultScene::IsEnd() const
@@ -52,13 +52,13 @@ bool ResultScene::IsEnd() const
 	return (m_Step == STEP_END);
 }
 
-//ŠJnƒWƒ“ƒOƒ‹‘Ò‚¿
+//ï¿½Jï¿½nï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
 void ResultScene::step_Start_Jingle()
 {
 	m_Step = STEP_INPUT;
 }
 
-//“ü—Íó•t
+//ï¿½ï¿½ï¿½Íï¿½ï¿½t
 void ResultScene::step_Input()
 {
 	InputManager* pInputMng = InputManager::GetInstance();
@@ -68,7 +68,7 @@ void ResultScene::step_Input()
 	}
 }
 
-//ƒNƒŠƒAƒWƒ“ƒOƒ‹‘Ò‚¿
+//ï¿½Nï¿½ï¿½ï¿½Aï¿½Wï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ò‚ï¿½
 void ResultScene::step_Clear_Jingle()
 {
 	m_Step = STEP_END;

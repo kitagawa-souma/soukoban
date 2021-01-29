@@ -111,20 +111,20 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 <<<<<<< HEAD
-      <AdditionalIncludeDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 =======
       <AdditionalIncludeDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
 <<<<<<< HEAD
-      <AdditionalLibraryDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -136,10 +136,10 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 <<<<<<< HEAD
-      <AdditionalIncludeDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 =======
       <AdditionalIncludeDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -148,10 +148,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
 <<<<<<< HEAD
-      <AdditionalLibraryDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -161,20 +161,20 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 <<<<<<< HEAD
-      <AdditionalIncludeDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 =======
       <AdditionalIncludeDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
 <<<<<<< HEAD
-      <AdditionalLibraryDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -186,10 +186,10 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 <<<<<<< HEAD
-      <AdditionalIncludeDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 =======
       <AdditionalIncludeDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -198,10 +198,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
 <<<<<<< HEAD
-      <AdditionalLibraryDirectories>C:\Users\tyskf\Documents\soukoban\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\新しいフォルダー\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
 =======
       <AdditionalLibraryDirectories>C:\Users\tyskf\source\repos\Soukoban\DxLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 3c17099abbd0c30197ee49ce56a851551d447e82
+>>>>>>> 74d30f36f908c253a16246c100ba5bb253f0941e
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
